@@ -1,0 +1,32 @@
+<style>
+  table, td {
+    border: 1px black solid;
+    padding: 5px;
+    border-collapse: collapse;
+  }
+  table {
+    margin-bottom: 20px;
+  }
+</style>
+
+<% unless @responses.nil? %>
+
+<table>
+  <% @responses.each do |response| %>
+  <tr>
+    <% response.each do |field| %>
+    <td><%= field %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<% end %>
+
+<form method="POST">
+  <textarea cols="50" rows="20" name="urls">
+    <%= params[:urls] %>
+  </textarea>
+  <br>
+  <input type="submit">
+</form>
